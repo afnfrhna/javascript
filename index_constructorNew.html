@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<body>0
+
+	<script>
+		'use strict';
+
+		function Calculator() {
+
+			this.read = function() {
+				this.x = +prompt('Enter x:', );
+				this.y = +prompt('Enter y:', );
+				this.z = +prompt('Enter z:', );
+			};
+
+			this.sum = function() {
+				return this.x + this.y + this.z;
+			};
+
+			this.mul = function() {
+				return this.x * this.y * this.z;
+			};
+		}
+
+		let calculator = new Calculator();
+		calculator.read();
+
+		alert( "Sum=" + calculator.sum() );
+		alert( "Mul=" + calculator.mul() );
+
+	</script>
+
+</body>
+</html>
