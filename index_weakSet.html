@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<body>0
+
+	<script>
+		'use strict';
+
+		let messages = [
+			{text: "Hello", from: "John"},
+			{text: "Hows goes?", from: "John"},
+			{text: "See you soon", from: "Alice"}
+		];
+
+		let checkRead = new WeakSet();
+
+		checkRead.add(messages[0]);
+		checkRead.add(messages[1]);
+
+
+		checkRead.add(messages[0]); // reading the same message again
+		// in checkRead still has the same 2 unique elements, not added new one
+
+		//checking whether the first message read or not
+		alert("Read message 0: " + checkRead.has(messages[0]));
+		//yes, true. 
+
+		// now we want to remove message
+		messages.shift(); 
+		// this one removed the first element in the array
+		// now checkRead has 1 element only. 
+
+		//different solution to add another property of whether the message read is true after its read. 
+		// let isRead = Symbol("isRead");
+		// messages[0][isRead] = true;
+
+	</script>
+
+</body>
+</html>
